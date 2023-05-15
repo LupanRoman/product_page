@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap')
+
+$orange: hsl(26, 100%, 55%)
+$paleOrange: hsl(25, 100%, 94%)
+$vDarkBlue: hsl(220, 13%, 13%)
+$darkGrayBlue: hsl(219, 9%, 45%)
+$grayBlue: hsl(220, 14%, 75%)
+$lightGrayBlue: hsl(223, 64%, 98%)
+$white: hsl(0, 0%, 100%)
+$black: hsl(0, 0%, 0%)
+$desBlack: hsl(0, 0%, 0%, 75%)
+$breakpoint-tablet: 768px
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Kumbh Sans'
+
+.nav-container
+    display: flex
+    position: relative
+    align-items: center 
+    justify-content: space-between
+    padding: 15px
+    height: 10vh
+    
+
+.left-side
+    display: flex
+    height: 10vh
+    align-items: center
+    align-content: center
+    gap: 15px
+
+.open-menu
+    color: $darkGrayBlue
+    font-size: 20px
+    cursor: pointer
+
+.profile
+    display: flex 
+    align-items: center
+    gap: 15px
+
+.profile-pic 
+    cursor: pointer
+
+.cart
+    font-size: 20px
+    cursor: pointer
+
+.cart-container
+    position: relative
+
+.qty
+    position: absolute
+    left: 12px
+    top: -8px
+    padding: 0px 5px
+    border-radius: 10px
+    background-color: $orange
+    color: $paleOrange
+    font-weight: 700
+    font-size: 10px
+
+.nav-links 
+    display: flex
+    position: absolute
+    flex-direction: column
+    gap: 15px
+    background-color: $white
+    height: 100vh
+    padding-top: 15px
+    padding-left: 15px
+    width: 75%
+    top: 0
+    left: -100%
+    z-index: 999
+
+.nav-links.active 
+    left: 0
+
+.nav-links a 
+    text-decoration: none
+    color: $black
+    font-weight: 700
+    cursor: pointer
+
+.close-menu
+    font-size: 25px
+    cursor: pointer
+
+@media (min-width: $breakpoint-tablet) 
+    .open-menu 
+        display: none
+    
+    .close-menu
+        display: none
+
+   
