@@ -2,7 +2,7 @@ import { TfiShoppingCart } from 'react-icons/tfi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { GrFormClose } from 'react-icons/gr';
 
-const Navbar = () => {
+const Navbar = ({ counter, openCart }) => {
   const openMenu = () => {
     const menuBtn = document.getElementById('nav-links');
     menuBtn?.classList.toggle('active');
@@ -24,11 +24,16 @@ const Navbar = () => {
           <a href="">Contact</a>
         </div>
         <div className="profile">
-          <div className='cart-container'>
+          <div className="cart-container" onClick={openCart}>
             <TfiShoppingCart className="cart" />
-            <span className='qty'>0</span>
+            <span className="qty">{counter}</span>
           </div>
-          <img src="image-avatar.png" alt="A profile image" width={20} className='profile-pic' />
+          <img
+            src="image-avatar.png"
+            alt="A profile image"
+            width={20}
+            className="profile-pic"
+          />
         </div>
       </div>
     </>
