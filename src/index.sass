@@ -235,16 +235,39 @@ body::-webkit-scrollbar
 
 .cart-holder.active
     position: absolute
+    display: flex
     padding: 10px 10px 10px 10px
     width: 100%
     max-width: 320px
     z-index: 9998
 
+.cart-items
+    padding: 10px
+
 .cart-wrapper 
-    padding: 10px 10px 10px 10px
     background-color: $white
     width: 100%
+    border-radius: 10px
     min-height: 220px
+
+    h4
+        padding: 10px
+        font-size: 16px
+
+    hr
+
+        border-top: solid 1px $lightGrayBlue
+
+.total 
+    display: flex
+    align-items: center
+    gap: 5px
+
+.delete
+    cursor: pointer
+
+.checkout
+    cursor: pointer
 
 
 

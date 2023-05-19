@@ -10,6 +10,7 @@ const App = () => {
   // !! Use state to send data to navbar
   const [index, setIndex] = useState(0);
   const [counter, setCounter] = useState(0);
+  const [itemInCart, setItemInCart] = useState(false);
 
   const increaseIndex = () => {
     setIndex(index + 1);
@@ -30,6 +31,10 @@ const App = () => {
   const openCart = () => {
     const cartHolder = document.getElementById('cart-holder');
     cartHolder?.classList.toggle('active');
+  };
+
+  const deleteItem = () => {
+    setItemInCart(false);
   };
 
   return (
@@ -62,7 +67,7 @@ const App = () => {
                     />
                   </div>
                   <div id="cart-holder" className="cart-holder">
-                    <Cart />
+                    <Cart itemInCart={itemInCart} deleteItem={deleteItem} counter={counter} />
                   </div>
                   <div className="productInfo-wrapper">
                     <div className="heading">
@@ -89,7 +94,10 @@ const App = () => {
                           <FaPlus />
                         </button>
                       </div>
-                      <div className="add-to-cart">
+                      <div
+                        className="add-to-cart"
+                        onClick={() => setItemInCart(true)}
+                      >
                         <p>
                           <TfiShoppingCart />
                         </p>
@@ -98,6 +106,7 @@ const App = () => {
                     </div>
                   </div>
                 </div>
+                {/* {console.log(itemInCart)} */}
               </>
             ))}
           </div>
