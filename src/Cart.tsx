@@ -9,25 +9,25 @@ const Cart = ({ itemInCart, deleteItem, counter }) => {
         <hr />
         <div className="cart-items">
           {itemInCart == false ? (
-            <h5>Your cart is empty</h5>
+            <h5 className='empty-cart'>Your cart is empty.</h5>
           ) : (
             <div className="product-review">
               {Info?.map((product) => (
                 <>
-                  <div>
-                    <div>
-                      <img src="" alt="" />
+                  <div className='cart-divider'>
+                    <div className='contents'>
+                      <img src={product.thumbnailImages[0].image} alt="" width={40}/>
                       <div className="product-cart-desc">
                         <h4>{product.title}</h4>
-                        <div className="total">
-                          <p>{`$${product.newPrice} x ${counter}`}</p>
-                          <p>
+                        <div className="total-wrapper">
+                          <p className='calculation'>{`$${product.newPrice}.00 x ${counter}`}</p>
+                          <div className='total-price'>
                             {counter == 0 ? (
-                              <p>{`$${product.newPrice}`}</p>
+                              <p>{`$${product.newPrice}.00`}</p>
                             ) : (
-                              <p>{`$${product.newPrice * counter}`}</p>
+                              <p>{`$${product.newPrice * counter}.00`}</p>
                             )}
-                          </p>
+                          </div>
                         </div>
                       </div>
                       <BsFillTrashFill onClick={deleteItem} className='delete' />

@@ -40,23 +40,28 @@ const App = () => {
   return (
     <>
       <div className="productInfo-page">
-        <Navbar counter={counter} openCart={openCart} />
+        <Navbar counter={counter} openCart={openCart} itemInCart={itemInCart} />
         <div>
           <div className="productInfo">
             {Info.map((product) => (
               <>
                 <div className="productPage-wrapper">
                   <div className="productImages-wrapper">
-                    {index >= 1 ? (
-                      <button className="left-arrow" onClick={decreaseIndex}>
-                        <IoIosArrowBack />
-                      </button>
-                    ) : null}
-                    {index <= 2 ? (
-                      <button className="right-arrow" onClick={increaseIndex}>
-                        <IoIosArrowForward />
-                      </button>
-                    ) : null}
+                    <div className='arrows'>
+                      {index >= 1 ? (
+                        <button className="left-arrow" onClick={decreaseIndex}>
+                          <IoIosArrowBack />
+                        </button>
+                      ) : null}
+                    </div>
+                    <div className='arrows'>
+                      {index <= 2 ? (
+                        <button className="right-arrow" onClick={increaseIndex}>
+                          <IoIosArrowForward />
+                        </button>
+                      ) : null}
+                    </div>
+                    <div className='image-wrapper'>
                     <img
                       src={
                         product.mainImages[0].image &&
@@ -64,10 +69,22 @@ const App = () => {
                       }
                       alt=""
                       className="product-image"
-                    />
+                      />
+                      <div className='thumbnailImage-container'>
+                        {Info[0].thumbnailImages.map((product) => (
+                          <>
+                          <img src={product.image} alt="" className='thumbnail-image' />
+                          </>
+                        ))}
+                      </div>
+                      </div>
                   </div>
                   <div id="cart-holder" className="cart-holder">
-                    <Cart itemInCart={itemInCart} deleteItem={deleteItem} counter={counter} />
+                    <Cart
+                      itemInCart={itemInCart}
+                      deleteItem={deleteItem}
+                      counter={counter}
+                    />
                   </div>
                   <div className="productInfo-wrapper">
                     <div className="heading">

@@ -2,7 +2,7 @@ import { TfiShoppingCart } from 'react-icons/tfi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { GrFormClose } from 'react-icons/gr';
 
-const Navbar = ({ counter, openCart }) => {
+const Navbar = ({ counter, openCart, itemInCart }) => {
   const openMenu = () => {
     const menuBtn = document.getElementById('nav-links');
     menuBtn?.classList.toggle('active');
@@ -26,7 +26,11 @@ const Navbar = ({ counter, openCart }) => {
         <div className="profile">
           <div className="cart-container" onClick={openCart}>
             <TfiShoppingCart className="cart" />
-            <span className="qty">{counter}</span>
+            {itemInCart == false ? (
+              <span className="qty">0</span>
+            ) : (
+              <span className="qty">{counter}</span>
+            )}
           </div>
           <img
             src="image-avatar.png"

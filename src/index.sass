@@ -10,6 +10,7 @@ $white: hsl(0, 0%, 100%)
 $black: hsl(0, 0%, 0%)
 $desBlack: hsl(0, 0%, 0%, 75%)
 $breakpoint-tablet: 768px
+$breakpoint-medium-desktop: 1024px
 
 
 body::-webkit-scrollbar
@@ -92,14 +93,6 @@ body::-webkit-scrollbar
 .close-menu
     font-size: 25px
     cursor: pointer
-
-@media (min-width: $breakpoint-tablet) 
-    .open-menu 
-        display: none
-    
-    .close-menu
-        display: none
-
 
 // !! PRODUCT DETAILS STYLE 
 
@@ -231,6 +224,7 @@ body::-webkit-scrollbar
 
 .cart-holder
     display: none
+    position: absolute
 
 
 .cart-holder.active
@@ -242,17 +236,23 @@ body::-webkit-scrollbar
     z-index: 9998
 
 .cart-items
-    padding: 10px
+    display: flex
+    justify-content: center
+    padding-top: 50px
+
+.empty-cart
+    color: $darkGrayBlue
+    font-weight: 700
 
 .cart-wrapper 
     background-color: $white
     width: 100%
     border-radius: 10px
-    min-height: 220px
+    min-height: 200px
 
     h4
-        padding: 10px
-        font-size: 16px
+        padding: 20px 10px 20px 20px
+        font-size: 14px
 
     hr
 
@@ -269,6 +269,143 @@ body::-webkit-scrollbar
 .checkout
     cursor: pointer
 
+.contents 
+    display: flex
+    gap: 10px
+    align-items: center
+    justify-content: space-between
+
+.product-cart-desc 
+    display: flex
+    flex-direction: column
+
+    h4
+        font-size: 13px
+        font-weight: 400
+        color: $desBlack
+        padding: 0px 0px 5px 0px
+
+.total-wrapper
+    display: flex 
+    align-items: center
+    gap: 10px
+
+.calculation
+    font-size: 14px
+    font-weight: 400
+    color: $desBlack
+
+.total-price
+    font-size: 14px
+    font-weight: 700
+
+.delete
+    color: $desBlack
+
+.checkout
+    padding: 15px 40px 15px 40px
+    background-color: $orange
+    color: $white
+    border: none
+    border-radius: 10px
+    font-weight: 700 
+
+.cart-divider
+    display: flex
+    flex-direction: column 
+    justify-content: space-between
+    gap: 20px
+    padding-left: 10px
+    padding-right: 10px
+
+
+
+
 
 
 // !! CART STYLE
+
+.thumbnailImage-container
+    display: none
+
+@media (min-width: $breakpoint-tablet) 
+    .productInfo-page
+        padding-left: 50px
+        padding-right: 50px
+
+    .productPage-wrapper
+        padding-left: 80px
+        padding-right: 80px
+
+    .nav-links
+        width: 50%
+
+
+@media (min-width: $breakpoint-medium-desktop) 
+    .productInfo-page
+        padding-left: 40px
+        padding-right: 40px
+
+
+
+    .open-menu 
+        display: none
+    
+    .close-menu
+        display: none
+
+    .nav-links
+        position: static
+        background: none 
+        flex-direction: row
+        display: flex
+        height: auto
+        padding: 0px
+
+    .productPage-wrapper
+        display: flex
+        flex-direction: row
+        align-items: center
+        height: 92vh
+
+    .productImages-wrapper
+        width: 50%
+
+    .productInfo-wrapper
+        width: 50%
+
+    .arrows
+        display: none
+
+    .image-wrapper
+        display: flex
+        flex-direction: column
+        gap: 30px
+        max-width: 390px
+
+    .product-image
+        border-radius: 10px
+        width: 100%
+        max-width: 390px
+        height: auto
+        max-height: 390px
+        object-fit: fill
+
+    .thumbnailImage-container
+        display: flex
+        justify-content: space-between
+
+    .thumbnail-image
+        max-width: 70px
+        border-radius: 10px
+
+    .add-to-cart-container
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+
+    .qty-controller
+        width: 40%
+
+    .add-to-cart
+        width: 60%
