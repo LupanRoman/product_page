@@ -11,6 +11,7 @@ $black: hsl(0, 0%, 0%)
 $desBlack: hsl(0, 0%, 0%, 75%)
 $breakpoint-tablet: 768px
 $breakpoint-medium-desktop: 1024px
+$breakpoint-large-desktop: 2000px
 
 
 body::-webkit-scrollbar
@@ -24,23 +25,33 @@ body::-webkit-scrollbar
     
 .nav-container
     display: flex
+    flex-direction: column
     position: relative
-    align-items: center 
+    // justify-content: space-between
+    padding-left: 15px
+    padding-right: 15px 
+    // height: 8vh
+
+    hr
+        display: none
+
+.nav-wrapper 
+    display: flex 
+    width: 100%
     justify-content: space-between
-    padding: 15px
-    height: 8vh
+    align-items: center
     
 .left-side
     display: flex
     height: 10vh
     align-items: center
-    align-content: center
     gap: 15px
 
 .open-menu
     color: $darkGrayBlue
-    font-size: 20px
+    font-size: 30px
     cursor: pointer
+    padding-top: 5px
 
 .profile
     display: flex 
@@ -49,6 +60,11 @@ body::-webkit-scrollbar
 
 .profile-pic 
     cursor: pointer
+    width: 30px
+
+.profile-pic:hover
+    border: 3px solid $orange
+    border-radius: 100%
 
 .cart
     font-size: 20px
@@ -83,6 +99,8 @@ body::-webkit-scrollbar
 
 .nav-links.active 
     left: 0
+    box-shadow: 0 0 0 9999px #000000b0
+
 
 .nav-links a 
     text-decoration: none
@@ -234,11 +252,13 @@ body::-webkit-scrollbar
     width: 100%
     max-width: 320px
     z-index: 9998
+     
+    
 
 .cart-items
     display: flex
     justify-content: center
-    padding-top: 50px
+    padding-top: 20px
 
 .empty-cart
     color: $darkGrayBlue
@@ -249,6 +269,7 @@ body::-webkit-scrollbar
     width: 100%
     border-radius: 10px
     min-height: 200px
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.303)
 
     h4
         padding: 20px 10px 20px 20px
@@ -329,22 +350,57 @@ body::-webkit-scrollbar
     display: none
 
 @media (min-width: $breakpoint-tablet) 
+
+    .left-side
+        h2
+            font-size: 30px
+
     .productInfo-page
         padding-left: 50px
         padding-right: 50px
 
     .productPage-wrapper
+        position: relative
         padding-left: 80px
         padding-right: 80px
 
     .nav-links
         width: 50%
 
+        a
+            color: $desBlack
+            font-weight: 400
+            font-size: 14px
+            padding-top: 5px
+        
+        a:hover 
+            color: $orange
+
+        
+
+    .cart-holder.active
+        top: 10px
+        right: 10px
+
+    .profile-pic
+        width: 40px
+
 
 @media (min-width: $breakpoint-medium-desktop) 
+
+    
+
+    .nav-container
+        hr
+            display: flex
+            width: 100%
+            color: rgb(131, 131, 131)
+
+
+
     .productInfo-page
-        padding-left: 40px
-        padding-right: 40px
+        padding-left: 140px
+        padding-right: 140px
 
 
 
@@ -363,16 +419,17 @@ body::-webkit-scrollbar
         padding: 0px
 
     .productPage-wrapper
+        
         display: flex
         flex-direction: row
         align-items: center
         height: 92vh
 
     .productImages-wrapper
-        width: 50%
+        width: 60%
 
     .productInfo-wrapper
-        width: 50%
+        width: 40%
 
     .arrows
         display: none
@@ -409,3 +466,14 @@ body::-webkit-scrollbar
 
     .add-to-cart
         width: 60%
+
+    .heading
+        h1
+            font-size: 32px
+
+    
+        
+@media (min-width: $breakpoint-large-desktop) 
+    .productInfo-page
+        padding-left: 780px
+        padding-right: 780px
