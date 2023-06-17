@@ -47,37 +47,43 @@ const App = () => {
               <>
                 <div className="productPage-wrapper">
                   <div className="productImages-wrapper">
-                    <div className='arrows'>
+                    <div className="arrows">
                       {index >= 1 ? (
                         <button className="left-arrow" onClick={decreaseIndex}>
                           <IoIosArrowBack />
                         </button>
                       ) : null}
                     </div>
-                    <div className='arrows'>
+                    <div className="arrows">
                       {index <= 2 ? (
                         <button className="right-arrow" onClick={increaseIndex}>
                           <IoIosArrowForward />
                         </button>
                       ) : null}
                     </div>
-                    <div className='image-wrapper'>
-                    <img
-                      src={
-                        product.mainImages[0].image &&
-                        product.mainImages[index]?.image
-                      }
-                      alt=""
-                      className="product-image"
+                    <div className="image-wrapper">
+                      <img
+                        src={
+                          product.mainImages[0].image &&
+                          product.mainImages[index]?.image
+                        }
+                        alt=""
+                        className="product-image"
                       />
-                      <div className='thumbnailImage-container'>
-                        {Info[0].thumbnailImages.map((product) => (
+                      <div className="thumbnailImage-container">
+                        {Info[0].thumbnailImages.map((product, i) => (
                           <>
-                          <img src={product.image} alt="" className='thumbnail-image' />
+                            <img
+                              key={i}
+                              src={product.image}
+                              alt=""
+                              className="thumbnail-image"
+                              onMouseEnter={() => setIndex(i)}
+                            />
                           </>
                         ))}
                       </div>
-                      </div>
+                    </div>
                   </div>
                   <div id="cart-holder" className="cart-holder">
                     <Cart

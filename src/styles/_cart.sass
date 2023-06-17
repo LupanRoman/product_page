@@ -1,0 +1,137 @@
+@use 'src/styles/variables'
+
+
+.cart-holder
+    display: none
+    position: absolute
+
+
+.cart-holder.active
+    position: absolute
+    display: flex
+    padding: 10px 10px 10px 10px
+    width: 100%
+    max-width: 320px
+    z-index: 9998
+     
+    
+
+.cart-items
+    display: flex
+    justify-content: center
+    padding-top: 20px
+
+.empty-cart
+    color: variables.$darkGrayBlue
+    font-weight: 700
+
+.cart-wrapper 
+    background-color: variables.$white
+    width: 100%
+    border-radius: 10px
+    min-height: 200px
+    box-shadow: 0px 0px 10px 0px rgba(85, 84, 84, 0.303)
+
+    h4
+        padding: 20px 10px 20px 20px
+        font-size: 14px
+
+    hr
+
+        border-top: solid 1px variables.$lightGrayBlue
+
+.total 
+    display: flex
+    align-items: center
+    gap: 5px
+
+.delete
+    cursor: pointer
+
+.checkout
+    cursor: pointer
+
+.contents 
+    display: flex
+    gap: 10px
+    align-items: center
+    justify-content: space-between
+
+.product-cart-desc 
+    display: flex
+    flex-direction: column
+
+    h4
+        font-size: 13px
+        font-weight: 400
+        color: variables.$desBlack
+        padding: 0px 0px 5px 0px
+
+.total-wrapper
+    display: flex 
+    align-items: center
+    gap: 10px
+
+.calculation
+    font-size: 14px
+    font-weight: 400
+    color: variables.$desBlack
+
+.total-price
+    font-size: 14px
+    font-weight: 700
+
+.delete
+    color: variables.$desBlack
+
+.checkout
+    padding: 15px 40px 15px 40px
+    background-color: variables.$orange
+    color: variables.$white
+    border: none
+    border-radius: 10px
+    font-weight: 700 
+
+.cart-divider
+    display: flex
+    flex-direction: column 
+    justify-content: space-between
+    gap: 20px
+    padding-left: 10px
+    padding-right: 10px
+
+@media (min-width: variables.$breakpoint-tablet) 
+
+    .cart-holder.active
+        top: 10px
+        right: 10px
+
+
+@media (min-width: variables.$breakpoint-medium-desktop) 
+    .add-to-cart-container
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        padding-top: 30px
+
+    .qty-controller
+        width: 40%
+
+    .add-to-cart
+        width: 60%
+        p
+            font-size: 12px
+
+@media (min-width: variables.$breakpoint-large-desktop) 
+    .add-to-cart
+        p
+            font-size: 20px
+
+@media (min-width: variables.$breakpoint-4k) 
+    .add-to-cart
+        p
+            font-size: 30px
+
+   
+
+    

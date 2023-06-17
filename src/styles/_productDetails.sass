@@ -1,0 +1,265 @@
+@use 'src/styles/variables'
+    
+.productPage-wrapper
+    display: flex
+    position: relative
+    flex-direction: column
+    gap: 15px
+
+.productInfo-wrapper 
+    display: flex
+    flex-direction: column
+    gap: 15px
+    padding: 0px 15px 20px
+
+.productImages-wrapper
+    position: relative
+
+    button
+        position: absolute
+        display: flex
+        z-index: 999
+        border: none
+        padding: 10px
+        font-size: 16px
+        border-radius: 100%
+        cursor: pointer
+        
+    
+    .left-arrow
+        top: 45%
+        left: 5%
+
+    .right-arrow
+        top: 45%
+        right: 5%
+
+.product-image
+    width: 100%
+    height: 40vh
+    object-fit: cover
+
+.thumbnailImage-container
+    display: none
+
+.heading
+    display: flex
+    flex-direction: column
+    gap: 10px
+
+    p 
+        font-weight: 700
+        color: variables.$orange
+        font-size: 14px
+
+    h1 
+        font-weight: 700
+        font-size: 24px
+
+    .product-desc
+        color: variables.$darkGrayBlue
+        font-weight: 400
+        line-height: 20px
+
+.price-discount
+    display: flex
+    justify-content: space-between
+    align-items: center
+    div
+        display: flex
+        align-items: center 
+        gap: 10px
+
+        p
+            font-size: 14px
+            font-weight: 700
+            color: variables.$orange
+            padding: 3px 8px 3px 8px
+            background-color: variables.$paleOrange
+            border-radius: 6px
+    
+    s
+        color: variables.$grayBlue
+        font-weight: 700
+        font-size: 14px
+
+.add-to-cart-container
+    display: flex
+    flex-direction: column
+    gap: 15px
+
+
+.qty-controller
+    display: flex
+    justify-content: space-between
+    background-color: variables.$lightGrayBlue
+    padding: 15px 25px 15px 25px
+    border-radius: 10px
+    
+    button
+        background: none
+        border: none
+        color: variables.$orange
+        cursor: pointer
+
+    p
+        color: variables.$black
+        font-weight: 700
+
+.add-to-cart
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 15px 25px 15px 25px
+    background-color: variables.$orange
+    border-radius: 10px
+    gap: 10px
+    cursor: pointer
+
+    p
+        color: variables.$white
+        font-weight: 700
+
+
+@media (min-width: variables.$breakpoint-tablet) 
+    .productInfo-page
+        padding-left: 50px
+        padding-right: 50px
+
+    .productPage-wrapper
+        position: relative
+        padding-left: 80px
+        padding-right: 80px
+
+
+@media (min-width: variables.$breakpoint-medium-desktop) 
+
+    .productInfo-page
+        padding-left: 100px
+        padding-right: 100px
+
+    .productPage-wrapper
+        
+        display: flex
+        flex-direction: row
+        align-items: center
+        height: 88vh
+        padding-left: 30px
+        padding-right: 30px
+
+    .productImages-wrapper
+        width: 50%
+
+    .productInfo-wrapper
+        width: 50%
+
+    .arrows
+        display: none
+
+    .image-wrapper
+        display: flex
+        flex-direction: column
+        gap: 30px
+        max-width: 390px
+
+    .product-image
+        border-radius: 10px
+        width: 100%
+        max-width: 330px
+        height: auto
+        max-height: 390px
+        object-fit: fill
+
+    .thumbnailImage-container
+        display: flex
+        justify-content: space-between
+        max-width: 330px
+
+    .thumbnail-image
+        max-width: 70px
+        border-radius: 10px
+        cursor: pointer
+
+    .add-to-cart-container
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        padding-top: 30px
+
+    .qty-controller
+        width: 40%
+
+    .add-to-cart
+        width: 60%
+        p
+            font-size: 12px
+
+    .heading
+        h1
+            font-size: 32px
+
+    .price-discount
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+
+    
+        
+@media (min-width: variables.$breakpoint-large-desktop) 
+    .productInfo-page
+        padding-left: 200px
+        padding-right: 200px
+
+    .product-image 
+        max-width: 500px
+
+    .thumbnailImage-container
+        max-width: 400px
+
+    .heading
+        h1
+            font-size: 40px
+        p
+            font-size: 16px
+
+    .add-to-cart
+        p
+            font-size: 20px
+
+@media (min-width: variables.$breakpoint-4k) 
+    .productInfo-page
+        padding-left: 500px
+        padding-right: 500px
+
+    .image-wrapper
+        display: flex
+        flex-direction: column
+        gap: 30px
+        max-width: 600px
+
+    .product-image
+        border-radius: 10px
+        max-width: 600px
+        max-height: 600px
+        object-fit: fill
+
+    .thumbnailImage-container
+        max-width: 600px
+
+    .thumbnail-image
+        max-width: 130px
+
+    .heading
+        h1
+            font-size: 70px
+        p
+            font-size: 30px
+
+    .add-to-cart
+        p
+            font-size: 30px
+
+    .product-desc
+        line-height: 80px
+
+    

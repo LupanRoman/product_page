@@ -1,0 +1,147 @@
+@use 'src/styles/variables'
+    
+.nav-container
+    display: flex
+    flex-direction: column
+    position: relative
+    padding-left: 15px
+    padding-right: 15px 
+
+    hr
+        display: none
+
+.nav-wrapper 
+    display: flex 
+    width: 100%
+    justify-content: space-between
+    align-items: center
+    
+.left-side
+    display: flex
+    height: 10vh
+    align-items: center
+    gap: 15px
+
+.open-menu
+    color: variables.$darkGrayBlue
+    font-size: 30px
+    cursor: pointer
+    padding-top: 5px
+
+.profile
+    display: flex 
+    align-items: center
+    gap: 30px
+
+.profile-pic 
+    cursor: pointer
+    width: 30px
+
+.profile-pic:hover
+    border: 3px solid variables.$orange
+    border-radius: 100%
+
+.cart
+    font-size: 20px
+    cursor: pointer
+
+.cart-container
+    position: relative
+
+.qty
+    position: absolute
+    left: 12px
+    top: -8px
+    padding: 0px 5px
+    border-radius: 10px
+    background-color: variables.$orange
+    font-weight: 700
+    font-size: 10px
+
+.nav-links 
+    display: flex
+    position: absolute
+    flex-direction: column
+    gap: 15px
+    background-color: variables.$white
+    height: 100vh
+    padding-top: 15px
+    padding-left: 15px
+    width: 75%
+    top: 0
+    left: -100%
+    z-index: 9999
+
+.nav-links.active 
+    left: 0
+    box-shadow: 0 0 0 9999px #000000b0
+
+
+.nav-links a 
+    text-decoration: none
+    color: variables.$black
+    font-weight: 700
+    cursor: pointer
+
+.close-menu
+    font-size: 25px
+    cursor: pointer
+
+
+@media (min-width: variables.$breakpoint-tablet) 
+
+    .left-side
+        gap: 30px
+        h2
+            font-size: 30px
+
+    .nav-links
+        width: 50%
+
+        a
+            color: variables.$desBlack
+            font-weight: 400
+            font-size: 14px
+            padding-top: 5px
+        
+        a:hover 
+            color: variables.$orange
+
+        
+
+    .cart-holder.active
+        top: 10px
+        right: 10px
+
+    .profile-pic
+        width: 40px
+
+
+@media (min-width: variables.$breakpoint-medium-desktop) 
+
+    .nav-container
+        hr
+            display: flex
+            width: 100%
+            color: rgb(131, 131, 131)
+
+    .open-menu 
+        display: none
+    
+    .close-menu
+        display: none
+
+    .nav-links
+        position: static
+        background: none 
+        flex-direction: row
+        display: flex
+        height: auto
+        padding: 0px
+
+
+    
+
+
+
+    
